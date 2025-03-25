@@ -214,36 +214,8 @@
 
 <div id="footer"></div>
 
-    
-    <script>
-        // Configuration Firebase
-        const firebaseConfig = {
-            apiKey: "VOTRE_API_KEY",
-            authDomain: "votre-auth-domain.firebaseapp.com",
-            projectId: "votre-project-id",
-            storageBucket: "votre-storage-bucket.appspot.com",
-            messagingSenderId: "votre-sender-id",
-            appId: "votre-app-id",
-        };
+<script type="module" src="../js/contact.js"></script>
 
-        // Initialisation de Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore(app);
-
-        // Exemple d'envoi de données à Firestore
-        const envoyerFormulaire = async (formData) => {
-            try {
-                const docRef = await db.collection("contacts").add({
-                    nom: formData.nom,
-                    email: formData.email,
-                    message: formData.message,
-                });
-                console.log("Document ajouté avec ID: ", docRef.id);
-            } catch (e) {
-                console.error("Erreur lors de l'ajout du document: ", e);
-            }
-        };
-    </script>
 </body>
 
 </html>

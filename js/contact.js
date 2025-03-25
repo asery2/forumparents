@@ -1,14 +1,13 @@
 // 🔹 Importation Firebase
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 // Configuration Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyA8tfUFJTPsBTSeExj_IMWdqYwTVChmc8k",
   authDomain: "forumparent-fe5a2.firebaseapp.com",
   projectId: "forumparent-fe5a2",
-  storageBucket: "forumparent-fe5a2.firebasestorage.app",
+  storageBucket: "forumparent-fe5a2.appspot.com",
   messagingSenderId: "997546472497",
   appId: "1:997546472497:web:3c098e06c492cb312dd110",
   measurementId: "G-75XBD0M9FM"
@@ -16,59 +15,34 @@ const firebaseConfig = {
 
 // Initialisation Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-// Fonction pour envoyer les données du formulaire à Firebase
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();  // Empêche le comportement par défaut du formulaire (rechargement de la page)
+// Soumission du formulaire
+document.getElementById("contactForm").addEventListener("submit", async function (event) {
+  event.preventDefault();
 
-    // Récupérer les valeurs du formulaire
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const subject = document.getElementById("subject").value;
-    const message = document.getElementById("message").value;
+  // Récupération des valeurs du formulaire
+  const nom = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
 
-    // Vérification basique pour s'assurer que tous les champs sont remplis
-    if (name && email && subject && message) {
-        // Créer une référence unique pour chaque message envoyé
-        const newMessageRef = database.ref("messages").push();
-
-        // Sauvegarder les données dans Firebase
-        newMessageRef.set({
-            name: name,
-            email: email,
-            subject: subject,
-            message: message,
-            timestamp: Date.now()  // Ajouter un timestamp pour chaque message
-        })
-        .then(() => {
-            alert("Votre message a été envoyé avec succès !");
-            // Réinitialiser le formulaire après l'envoi
-            document.getElementById("contactForm").reset();
-        })
-        .catch((error) => {
-            console.error("Erreur lors de l'envoi du message : ", error);
-            alert("Une erreur s'est produite. Veuillez réessayer plus tard.");
-        });
-    } else {
-        alert("Veuillez remplir tous les champs.");
-    }
-    // Fonction pour envoyer les données du formulaire vers Firestore
-  const envoyerFormulaire = async (formData) => {
+  if (nom && email && subject && message) {
     try {
-      const docRef = await addDoc(collection(db, "contacts"), {
-        nom: formData.nom,
-        email: formData.email,
-        message: formData.message,
+      await addDoc(collection(db, "contacts"), {
+        nom: nom,
+        email: email,
+        sujet: subject,
+        message: message,
+        date: new Date().toISOString()
       });
-      console.log("Document ajouté avec ID: ", docRef.id);
-    } catch (e) {
-      console.error("Erreur lors de l'ajout du document: ", e);
+      alert("Message envoyé avec succès !");
+      document.getElementById("contactForm").reset();
+    } catch (error) {
+      console.error("Erreur lors de l'envoi :", error);
+      alert("Erreur lors de l'envoi du message.");
     }
-  };
-  // Envoyer les données vers Firestore
-    envoyerFormulaire(formData);
-  
-  
+  } else {
+    alert("Veuillez remplir tous les champs.");
+  }
 });
