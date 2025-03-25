@@ -1,0 +1,3 @@
+[build]
+  publish = "dist"  # Remplacez par le répertoire de publication de votre projet
+  command = "npm run build"  # Remplacez par votre commande de construction
