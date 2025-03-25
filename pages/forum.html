@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParentConnect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/forum.css">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <header>
+
+    <header class="navbar"></header>
+    <header class="navbar">
+        <div class="navbar-left">
+            <div class="logo">
+                <img src="../assets/logo.png" alt="Logo">
+                <span>ParentConnect</span>
+            </div>
+            <div class="dropdown home-dropdown">
+                <button class="dropdown-button">
+                    <span>Accueil</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Page d'accueil</a>
+                    <a href="#">Populaire</a>
+                    <a href="#">Tout</a>
+                    <a href="#">Top forums</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Rechercher sur ParentConnect">
+        </div>
+        
+        <div class="navbar-right">
+            <a href="#" class="icon-button"><i class="fas fa-calendar-alt"></i></a>
+            <a href="#" class="icon-button"><i class="fas fa-book-reader"></i></a>
+            <a href="#" class="icon-button"><i class="fas fa-comment-dots"></i></a>
+            <a href="#" class="icon-button"><i class="fas fa-bell"></i></a>
+            <a href="#" class="icon-button"><i class="fas fa-plus"></i></a>
+            
+            <div class="dropdown user-dropdown">
+                <button class="dropdown-button user-button">
+                    <div class="avatar">
+                        <img src="/api/placeholder/30/30" alt="Avatar">
+                    </div>
+                    <span>Parent123</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fas fa-user"></i> Profil</a>
+                    <a href="#"><i class="fas fa-cog"></i> Paramètres</a>
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="main-container">
+        <!-- Barre latérale gauche -->
+        <aside class="sidebar left-sidebar">
+            <div class="sidebar-section">
+                <h3>Vos forums</h3>
+                <ul class="forum-list">
+                    <li><a href="#"><img src="/api/placeholder/20/20" alt="Forum"> r/ÉducationBienveillante</a></li>
+                    <li><a href="#"><img src="/api/placeholder/20/20" alt="Forum"> r/ActivitésEnfants</a></li>
+                    <li><a href="#"><img src="/api/placeholder/20/20" alt="Forum"> r/ParentsAdos</a></li>
+                    <li><a href="#"><img src="/api/placeholder/20/20" alt="Forum"> r/AlimentationFamille</a></li>
+                </ul>
+                <a href="#" class="show-more">Voir plus</a>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Sujets populaires</h3>
+                <ul class="topic-list">
+                    <li><a href="#"><i class="fas fa-heart"></i> Bien-être familial</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Éducation</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Vie de famille</a></li>
+                    <li><a href="#"><i class="fas fa-baby"></i> Petite enfance</a></li>
+                </ul>
+                <a href="#" class="show-more">Voir plus</a>
+            </div>
+        </aside>
+
+        <!-- Flux de publications -->
+        <div class="content-feed">
+            <!-- Filtres -->
+            <div class="feed-filters">
+                <div class="view-options">
+                    <button class="active"><i class="fas fa-fire"></i> Tendances</button>
+                    <button><i class="fas fa-certificate"></i> Nouveautés</button>
+                    <button><i class="fas fa-trophy"></i> Top</button>
+                </div>
+                <div class="display-options">
+                    <button class="active"><i class="fas fa-list"></i></button>
+                    <button><i class="fas fa-th-large"></i></button>
+                </div>
+            </div>
+
+            <!-- Publications -->
+            <div class="posts">
+                <!-- Publication 1 -->
+                <div class="post">
+                    <div class="post-votes">
+                        <button class="upvote"><i class="fas fa-arrow-up"></i></button>
+                        <span class="vote-count">245</span>
+                        <button class="downvote"><i class="fas fa-arrow-down"></i></button>
+                    </div>
+                    
+                    <div class="post-content">
+                        <div class="post-header">
+                            <a href="#" class="post-community">
+                                <img src="/api/placeholder/20/20" alt="Forum">
+                                r/ÉducationBienveillante
+                            </a>
+                            <span class="post-metadata">Posté par <a href="#">u/MamanDeTimothée</a> il y a 3 heures</span>
+                        </div>
+                        
+                        <h3 class="post-title">Comment aider mon enfant à développer sa confiance en soi à l'école</h3>
+                        
+                        <div class="post-text">
+                            <p>Mon fils de 8 ans manque de confiance lorsqu'il doit prendre la parole en classe. Avez-vous des conseils ou jeux que je pourrais faire avec lui à la maison pour l'aider à se sentir plus à l'aise ?</p>
+                        </div>
+                        
+                        <div class="post-actions">
+                            <button><i class="fas fa-comment-alt"></i> 32 commentaires</button>
+                            <button><i class="fas fa-share"></i> Partager</button>
+                            <button><i class="fas fa-bookmark"></i> Sauvegarder</button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Publication 2 -->
+                <div class="post">
+                    <div class="post-votes">
+                        <button class="upvote"><i class="fas fa-arrow-up"></i></button>
+                        <span class="vote-count">178</span>
+                        <button class="downvote"><i class="fas fa-arrow-down"></i></button>
+                    </div>
+                    
+                    <div class="post-content">
+                        <div class="post-header">
+                            <a href="#" class="post-community">
+                                <img src="/api/placeholder/20/20" alt="Forum">
+                                r/ActivitésEnfants
+                            </a>
+                            <span class="post-metadata">Posté par <a href="#">u/PapaCreatif</a> il y a 5 heures</span>
+                        </div>
+                        
+                        <h3 class="post-title">7 activités scientifiques simples à faire avec vos enfants pendant les vacances</h3>
+                        
+                        <div class="post-image">
+                            <img src="/api/placeholder/600/400" alt="Enfants faisant des expériences">
+                        </div>
+                        
+                        <div class="post-actions">
+                            <button><i class="fas fa-comment-alt"></i> 45 commentaires</button>
+                            <button><i class="fas fa-share"></i> Partager</button>
+                            <button><i class="fas fa-bookmark"></i> Sauvegarder</button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Publication 3 -->
+                <div class="post">
+                    <div class="post-votes">
+                        <button class="upvote"><i class="fas fa-arrow-up"></i></button>
+                        <span class="vote-count">324</span>
+                        <button class="downvote"><i class="fas fa-arrow-down"></i></button>
+                    </div>
+                    
+                    <div class="post-content">
+                        <div class="post-header">
+                            <a href="#" class="post-community">
+                                <img src="/api/placeholder/20/20" alt="Forum">
+                                r/AlimentationFamille
+                            </a>
+                            <span class="post-metadata">Posté par <a href="#">u/ChefParent</a> il y a 8 heures</span>
+                        </div>
+                        
+                        <h3 class="post-title">5 recettes rapides approuvées par mes enfants difficiles</h3>
+                        
+                        <div class="post-image">
+                            <img src="/api/placeholder/600/400" alt="Repas famille">
+                        </div>
+                        
+                        <div class="post-actions">
+                            <button><i class="fas fa-comment-alt"></i> 87 commentaires</button>
+                            <button><i class="fas fa-share"></i> Partager</button>
+                            <button><i class="fas fa-bookmark"></i> Sauvegarder</button>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barre latérale droite -->
+        <aside class="sidebar right-sidebar">
+            <div class="sidebar-card premium-card">
+                <img src="/api/placeholder/40/40" alt="Premium">
+                <div class="card-content">
+                    <h3>ParentConnect Plus</h3>
+                    <p>Accédez à nos webinaires exclusifs avec des spécialistes de l'enfance</p>
+                    <button class="premium-button">En savoir plus</button>
+                </div>
+            </div>
+            
+            <div class="sidebar-card community-card">
+                <div class="card-header">
+                    <img src="/api/placeholder/64/64" alt="Forum">
+                    <h3>r/ÉducationBienveillante</h3>
+                </div>
+                <p>Un espace d'échange pour les parents souhaitant pratiquer une éducation positive et respectueuse de l'enfant.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="number">15k</span>
+                        <span class="label">Membres</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">456</span>
+                        <span class="label">En ligne</span>
+                    </div>
+                </div>
+                <button class="community-button">Rejoindre</button>
+            </div>
+            
+            <div class="sidebar-card rules-card">
+                <h3>Valeurs de notre communauté</h3>
+                <ol class="rules-list">
+                    <li>Bienveillance et respect dans tous les échanges</li>
+                    <li>Pas de jugement sur les choix parentaux</li>
+                    <li>Respect de la vie privée des enfants</li>
+                    <li>Sources fiables pour les conseils de santé/sécurité</li>
+                </ol>
+                <a href="#" class="show-more">Voir toutes nos valeurs</a>
+            </div>
+            
+            <div class="sidebar-card">
+                <h3>Ressources du mois</h3>
+                <ul class="resource-list">
+                    <li><a href="#"><i class="fas fa-book"></i> Guide sommeil par âge</a></li>
+                    <li><a href="#"><i class="fas fa-podcast"></i> Podcast "Parentalité sereine"</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Agenda activités vacances</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="footer-links">
+                    <a href="#">À propos</a>
+                    <a href="#">Confidentialité</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Partenaires</a>
+                </div>
+                <div class="copyright">© 2025 ParentConnect</div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Modal de création de publication -->
+    <div class="create-post-modal" id="createPostModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Partager avec la communauté</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="community-selector">
+                    <span>Publier dans :</span>
+                    <select>
+                        <option>r/ÉducationBienveillante</option>
+                        <option>r/ActivitésEnfants</option>
+                        <option>r/ParentsAdos</option>
+                        <option>r/AlimentationFamille</option>
+                    </select>
+                </div>
+                
+                <div class="post-type-tabs">
+                    <button class="tab active">Texte</button>
+                    <button class="tab">Image</button>
+                    <button class="tab">Lien</button>
+                    <button class="tab">Sondage</button>
+                </div>
+                
+                <input type="text" placeholder="Titre de votre publication" class="post-title-input">
+                
+                <div class="post-editor">
+                    <textarea placeholder="Partagez votre expérience, posez une question ou demandez conseil..."></textarea>
+                    <div class="editor-toolbar">
+                        <button><i class="fas fa-bold"></i></button>
+                        <button><i class="fas fa-italic"></i></button>
+                        <button><i class="fas fa-link"></i></button>
+                        <button><i class="fas fa-list-ul"></i></button>
+                        <button><i class="fas fa-image"></i></button>
+                    </div>
+                </div>
+                
+                <div class="post-tags">
+                    <input type="text" placeholder="Ajouter des tags (ex: conseil, entraide, partage d'expérience)">
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="cancel-button">Annuler</button>
+                    <button class="post-button">Publier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/forum.js"></script>
+</body>
+</html>

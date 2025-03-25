@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Parents - Communauté d'entraide</title>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <img src="../assets/logo.png" alt="Logo du forum" class="logo">
+        <button class="mobile-menu-toggle">☰</button>
+    <nav>
+        <ul>
+            <!--li><a href="index.html">Accueil</a></li-->
+            <li><a href="forumparent.html">Forum</a></li>
+            <li><a href="resources.html">Ressources</a></li>
+            <li><a href="specialistes.html">Spécialistes</a></li>
+            <li><a href="events.html">Événements</a></li> 
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="cta-button">Se connecter</a></li>
+        </u>
+    </nav>
+</header>
+    <div class="main-container">
+        <!-- Menu de gauche fixe -->
+        <div class="left-sidebar">
+            <!-- Feeds -->
+            <div class="sidebar-section">
+                <h3>Feeds</h3>
+                <div class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-arrow-trend-up"></i>
+                    <span>Populaire</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>En vogue</span>
+                </div>
+            </div>
+            
+            <!-- Communautés récentes -->
+            <div class="sidebar-section">
+                <h3>Communautés récentes</h3>
+                <div class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>r/Parentalité</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>r/Éducation</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>r/SantéEnfant</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>r/Activités</span>
+                </div>
+            </div>
+            
+            <!-- Liens du pied de page déplacés ici -->
+            <div class="sidebar-section">
+                <h3>À propos</h3>
+                <div class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>À propos</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Carrières</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Presse</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-ad"></i>
+                    <span>Publicité</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-blog"></i>
+                    <span>Blog</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Utilisation</h3>
+                <div class="menu-item">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Conditions</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Confidentialité</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>Modération</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-question-circle"></i>
+                    <span>FAQ</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Contactez-nous</h3>
+                <div class="menu-item">
+                    <i class="fas fa-headset"></i>
+                    <span>Aide</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-bug"></i>
+                    <span>Signaler un bug</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </div>
+                <div class="social-links" style="padding: 8px; display: flex; gap: 12px;">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="copyright" style="padding: 16px 8px; font-size: 12px; color: #878A8C;">
+                © 2025 ForumParents. Tous droits réservés.
+            </div>
+        </div>
+
+        <!-- Zone centrale pour les posts -->
+        <div class="content-area">
+            <!-- Barre de navigation du forum -->
+            <div class="forum-navigation">
+                <div class="forum-sort">
+                    <div class="sort-option active">
+                        <i class="fas fa-fire"></i> Tendance
+                    </div>
+                    <div class="sort-option">
+                        <i class="fas fa-certificate"></i> Nouveau
+                    </div>
+                    <div class="sort-option">
+                        <i class="fas fa-arrow-up"></i> Top
+                    </div>
+                    <div class="sort-option">
+                        <i class="fas fa-chart-line"></i> En hausse
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulaire de création de post -->
+            <div class="post-form">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <input type="text" class="post-input" placeholder="Créer un post">
+            </div>
+
+            <!-- Container des posts -->
+            <div class="posts-container">
+                <!-- Post 1 -->
+                <div class="post-card">
+                    <div class="vote-column">
+                        <button class="vote-button upvote"><i class="fas fa-arrow-up"></i></button>
+                        <div class="vote-count">128</div>
+                        <button class="vote-button downvote"><i class="fas fa-arrow-down"></i></button>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <img src="img/community-icon.jpg" alt="Icône" class="community-icon">
+                            <span class="community-name">r/Parentalité</span>
+                            <span class="post-author">Posté par u/MamanDe3</span>
+                            <span class="post-time">il y a 8 heures</span>
+                        </div>
+                        <h3 class="post-title">
+                            <span class="post-flair flair-question">Question</span>
+                            <a href="post.html">Comment gérer les crises de colère de mon enfant de 3 ans en public ?</a>
+                        </h3>
+                        <div class="post-excerpt">
+                            Mon fils de 3 ans fait de plus en plus de crises de colère quand nous sommes au supermarché ou dans d'autres lieux publics. J'ai essayé plusieurs approches mais rien ne semble fonctionner. Comment gérez-vous ce genre de situation avec vos enfants ?
+                        </div>
+                        <div class="post-actions">
+                            <div class="post-action comments-count">
+                                <i class="fas fa-comment-alt"></i> 43 commentaires
+                            </div>
+                            <div class="post-action share-action">
+                                <i class="fas fa-share"></i> Partager
+                            </div>
+                            <div class="post-action save-action">
+                                <i class="far fa-bookmark"></i> Sauvegarder
+                            </div>
+                            <div class="post-action report-action">
+                                <i class="fas fa-flag"></i> Signaler
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 2 avec badge Premium -->
+                <div class="post-card">
+                    <div class="vote-column">
+                        <button class="vote-button upvote"><i class="fas fa-arrow-up"></i></button>
+                        <div class="vote-count">95</div>
+                        <button class="vote-button downvote"><i class="fas fa-arrow-down"></i></button>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <img src="img/community-icon.jpg" alt="Icône" class="community-icon">
+                            <span class="community-name">r/Parentalité</span>
+                            <span class="post-author">Posté par u/PapaActif</span>
+                            <i class="fas fa-award" style="color: gold;"></i>
+                            <span class="post-time">il y a 12 heures</span>
+                        </div>
+                        <h3 class="post-title">
+                            <span class="post-flair flair-conseil">Conseil</span>
+                            <a href="post.html">Liste de jeux éducatifs qui ont vraiment fonctionné avec mes enfants</a>
+                        </h3>
+                        <div class="post-excerpt">
+                            Après des années d'essais, voici les jeux qui ont le mieux fonctionné pour développer la motricité, la logique et la créativité de mes enfants. Je partage cette liste car ces jeux ont été approuvés par des éducateurs.
+                        </div>
+                        <div class="post-media">
+                            <img src="img/educational-games.jpg" alt="Jeux éducatifs">
+                        </div>
+                        <div class="post-actions">
+                            <div class="post-action comments-count">
+                                <i class="fas fa-comment-alt"></i> 27 commentaires
+                            </div>
+                            <div class="post-action share-action">
+                                <i class="fas fa-share"></i> Partager
+                            </div>
+                            <div class="post-action save-action">
+                                <i class="far fa-bookmark"></i> Sauvegarder
+                            </div>
+                            <div class="post-action report-action">
+                                <i class="fas fa-flag"></i> Signaler
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="post-card">
+                    <div class="vote-column">
+                        <button class="vote-button upvote"><i class="fas fa-arrow-up"></i></button>
+                        <div class="vote-count">243</div>
+                        <button class="vote-button downvote"><i class="fas fa-arrow-down"></i></button>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <img src="img/community-icon.jpg" alt="Icône" class="community-icon">
+                            <span class="community-name">r/Parentalité</span>
+                            <span class="post-author">Posté par u/NouveauPapa</span>
+                            <span class="post-time">il y a 1 jour</span>
+                        </div>
+                        <h3 class="post-title">
+                            <span class="post-flair flair-discussion">Discussion</span>
+                            <a href="post.html">Retour au travail après un congé parental - comment avez-vous géré cette transition ?</a>
+                        </h3>
+                        <div class="post-excerpt">
+                            Je dois retourner au travail dans deux semaines après un an de congé parental. Je ressens beaucoup d'anxiété à l'idée de laisser mon bébé à la crèche. Comment avez-vous géré cette transition ? Quels conseils pourriez-vous me donner ?
+                        </div>
+                        <div class="post-actions">
+                            <div class="post-action comments-count">
+                                <i class="fas fa-comment-alt"></i> 58 commentaires
+                            </div>
+                            <div class="post-action share-action">
+                                <i class="fas fa-share"></i> Partager
+                            </div>
+                            <div class="post-action save-action">
+                                <i class="far fa-bookmark"></i> Sauvegarder
+                            </div>
+                            <div class="post-action report-action">
+                                <i class="fas fa-flag"></i> Signaler
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 4 -->
+                <div class="post-card">
+                    <div class="vote-column">
+                        <button class="vote-button upvote"><i class="fas fa-arrow-up"></i></button>
+                        <div class="vote-count">175</div>
+                        <button class="vote-button downvote"><i class="fas fa-arrow-down"></i></button>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <img src="img/community-icon.jpg" alt="Icône" class="community-icon">
+                            <span class="community-name">r/Éducation</span>
+                            <span class="post-author">Posté par u/ProfEcole</span>
+                            <span class="post-time">il y a 2 jours</span>
+                        </div>
+                        <h3 class="post-title">
+                            <span class="post-flair flair-conseil">Conseil</span>
+                            <a href="post.html">Comment aider votre enfant à développer ses compétences en lecture dès le plus jeune âge</a>
+                        </h3>
+                        <div class="post-excerpt">
+                            Professeur des écoles depuis 15 ans, je partage quelques techniques qui ont fait leurs preuves pour encourager la lecture chez les enfants de 3 à 6 ans, bien avant qu'ils ne commencent l'apprentissage formel à l'école.
+                        </div>
+                        <div class="post-media">
+                            <img src="img/reading-kids.jpg" alt="Enfants lisant">
+                        </div>
+                        <div class="post-actions">
+                            <div class="post-action comments-count">
+                                <i class="fas fa-comment-alt"></i> 32 commentaires
+                            </div>
+                            <div class="post-action share-action">
+                                <i class="fas fa-share"></i> Partager
+                            </div>
+                            <div class="post-action save-action">
+                                <i class="far fa-bookmark"></i> Sauvegarder
+                            </div>
+                            <div class="post-action report-action">
+                                <i class="fas fa-flag"></i> Signaler
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post 5 -->
+                <div class="post-card">
+                    <div class="vote-column">
+                        <button class="vote-button upvote"><i class="fas fa-arrow-up"></i></button>
+                        <div class="vote-count">87</div>
+                        <button class="vote-button downvote"><i class="fas fa-arrow-down"></i></button>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <img src="img/community-icon.jpg" alt="Icône" class="community-icon">
+                            <span class="community-name">r/SantéEnfant</span>
+                            <span class="post-author">Posté par u/DocPédiatre</span>
+                            <i class="fas fa-award" style="color: gold;"></i>
+                            <span class="post-time">il y a 3 jours</span>
+                        </div>
+                        <h3 class="post-title">
+                            <span class="post-flair flair-question">Question</span>
+                            <a href="post.html">Vaccins optionnels pour enfants - lesquels recommandez-vous ?</a>
+                        </h3>
+                        <div class="post-excerpt">
+                            Mon pédiatre m'a parlé de plusieurs vaccins optionnels pour mon enfant de 18 mois. Je ne sais pas lesquels choisir. Quels sont vos retours d'expérience sur ces vaccins non obligatoires ?
+                        </div>
+                        <div class="post-actions">
+                            <div class="post-action comments-count">
+                                <i class="fas fa-comment-alt"></i> 64 commentaires
+                            </div>
+                            <div class="post-action share-action">
+                                <i class="fas fa-share"></i> Partager
+                            </div>
+                            <div class="post-action save-action">
+                                <i class="far fa-bookmark"></i> Sauvegarder
+                            </div>
+                            <div class="post-action report-action">
+                                <i class="fas fa-flag"></i> Signaler
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vous pouvez ajouter plus de posts ici -->
+            </div>
+        </div>
+
+        <!-- Barre latérale droite -->
+        <div class="right-sidebar">
+             <!-- Section Premium -->
+             <div class="premium-section" id="premiumSection">
+                <div class="premium-header">
+                    <h2>ForumParents Premium</h2>
+                </div>
+                <div class="community-details">
+                    <p class="community-description">
+                        Améliorez votre expérience avec ForumParents Premium et accédez à des fonctionnalités exclusives.
+                    </p>
+                    <ul class="premium-features">
+                        <li><i class="fas fa-ad"></i> Navigation sans publicité</li>
+                        <li><i class="fas fa-comment-dots"></i> Communautés exclusives Premium</li>
+                        <li><i class="fas fa-video"></i> Webinaires avec des experts</li>
+                        <li><i class="fas fa-award"></i> Badge Premium distinctif</li>
+                        <li><i class="fas fa-gift"></i> Réductions chez les partenaires</li>
+                    </ul>
+                    <button class="premium-button" id="premiumButton">Essayer Premium</button>
+                </div>
+            </div>
+            <!-- Informations de la communauté -->
+            <div class="community-info">
+                <div class="community-header">
+                    <h2>À propos de la communauté</h2>
+                </div>
+                <div class="community-details">
+                    <p class="community-description">
+                        Un espace convivial pour les parents francophones qui cherchent du soutien, des conseils et un sens de la communauté dans leur parcours parental.
+                    </p>
+                    <div class="community-stats">
+                        <div class="stat">
+                            <div class="stat-value">24.8k</div>
+                            <div class="stat-label">Membres</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">342</div>
+                            <div class="stat-label">En ligne</div>
+                        </div>
+                    </div>
+                    <button class="create-post-button">Créer un post</button>
+                    <p style="margin: 16px 0 8px; font-size: 14px; font-weight: 500;">Règles de la communauté</p>
+                    <ol class="community-rules">
+                        <li>Respect mutuel et bienveillance</li>
+                        <li>Pas de contenu commercial</li>
+                        <li>Confidentialité des enfants</li>
+                        <li>Avis médicaux: consulter un professionnel</li>
+                        <li>Respect de la diversité des méthodes parentales</li>
+                    </ol>
+                    <a href="#" class="view-all">Voir toutes les règles</a>
+                    <p style="margin: 16px 0 8px; font-size: 14px; font-weight: 500;">Modérateurs</p>
+                    <ul class="moderators-list">
+                        <li>u/ModerateurParent1</li>
+                        <li>u/ModerateurParent2</li>
+                        <li>u/ModerateurParent3</li>
+                    </ul>
+                    <a href="#" class="view-all">Voir tous les modérateurs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/forum.js"></script>
+    <script src="../js/main.js"></script>
+    <!-- Ajout du SDK Firebase dans ton fichier HTML -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+
+</body>
+</html>

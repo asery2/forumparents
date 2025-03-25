@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "997546472497",
+    "project_id": "forumparent-fe5a2",
+    "storage_bucket": "forumparent-fe5a2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997546472497:android:55051604568674b52dd110",
+        "android_client_info": {
+          "package_name": "com.tendem.forumparent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvvvmO258_UqAjsJItx_AFKAZErHOkso0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,339 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ressources pour les élèves | Forum des Parents</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/resources.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+</head>
+<body>
+     <!-- En-tête de la page -->
+     <header>
+        <div class="header-container">
+            <img src="../assets/logo.png" alt="Logo du forum" class="logo">
+            <button class="mobile-menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <!--li><a href="index.html">Accueil</a></li-->
+                    <li><a href="forumparent.html">Forum</a></li>
+                    <li><a href="resources.html">Ressources</a></li>
+                    <li><a href="specialistes.html" class="active">Spécialistes</a></li>
+                    <li><a href="events.html">Evenements</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <li><a href="logout.html" class="cta-button">Se déconnecter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-resources">
+        <div class="container">
+            <h1>Ressources pour les élèves</h1>
+            <p>Des outils pédagogiques pour apprendre, réviser et s'amuser !</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="resources-intro">
+                <h2>Développe tes connaissances et compétences</h2>
+                <p>Découvre notre collection de ressources éducatives soigneusement sélectionnées pour t'aider dans ton parcours scolaire. Que tu cherches à approfondir un sujet, réviser pour un examen ou simplement apprendre en t'amusant, tu trouveras ici des contenus adaptés à ton niveau et à tes besoins.</p>
+            </div>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Rechercher des ressources...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="popular-tags">
+                <span class="tag">Mathématiques</span>
+                <span class="tag">Français</span>
+                <span class="tag">Sciences</span>
+                <span class="tag">Histoire-Géo</span>
+                <span class="tag">Langues</span>
+                <span class="tag">Collège</span>
+                <span class="tag">Lycée</span>
+                <span class="tag">Primaire</span>
+            </div>
+
+            <div class="age-filter">
+                <button class="age-btn active">Tous les âges</button>
+                <button class="age-btn">6-8 ans</button>
+                <button class="age-btn">9-11 ans</button>
+                <button class="age-btn">12-14 ans</button>
+                <button class="age-btn">15-18 ans</button>
+            </div>
+
+            <section class="featured-resources">
+                <h2 class="featured-title">Ressources à la une</h2>
+                <div class="featured-cards">
+                    <div class="featured-card">
+                        <div class="featured-img" style="background-image: url('/api/placeholder/400/200');"></div>
+                        <div class="featured-content">
+                            <h3>Préparation Brevet 2025</h3>
+                            <p>Programme complet de révision pour réussir le brevet des collèges avec des exercices corrigés.</p>
+                            <a href="courses/brevet-preparation.html" class="featured-btn">Accéder</a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-img" style="background-image: url('/api/placeholder/400/200');"></div>
+                        <div class="featured-content">
+                            <h3>Initiation à la programmation</h3>
+                            <p>Cours interactif pour apprendre les bases du code informatique à travers des jeux et défis.</p>
+                            <a href="courses/programmation-jeunes.html" class="featured-btn">Découvrir</a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-img" style="background-image: url('/api/placeholder/400/200');"></div>
+                        <div class="featured-content">
+                            <h3>Méthodes de mémorisation</h3>
+                            <p>Techniques et astuces pour mieux retenir les leçons avec des exercices pratiques.</p>
+                            <a href="courses/memorisation-efficace.html" class="featured-btn">Commencer</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="resources-container">
+                <!-- Bibliothèque d'articles et vidéos -->
+                <div class="resource-category">
+                    <div class="category-header articles-header">
+                        <i class="fas fa-book-reader"></i> Bibliothèque éducative
+                    </div>
+                    <div class="category-content">
+                        <div class="resource-item">
+                            <span class="resource-badge new-badge">Nouveau</span>
+                            <div class="resource-title">
+                                <i class="fas fa-play-circle"></i> Les bases des mathématiques
+                            </div>
+                            <div class="resource-description">
+                                Série de vidéos explicatives sur les concepts fondamentaux en mathématiques, des additions aux équations.
+                            </div>
+                            <a href="https://www.lumni.fr/college/mathematiques" class="resource-link" target="_blank">Accéder au cours <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <div class="resource-title">
+                                <i class="fas fa-file-alt"></i> Les merveilles de la nature
+                            </div>
+                            <div class="resource-description">
+                                Articles illustrés expliquant les phénomènes naturels et la biodiversité, parfaits pour les cours de SVT.
+                            </div>
+                            <a href="https://www.futura-sciences.com/planete/nature/" class="resource-link">Découvrir les articles <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-badge popular-badge">Populaire</span>
+                            <div class="resource-title">
+                                <i class="fas fa-play-circle"></i> Histoire française interactive
+                            </div>
+                            <div class="resource-description">
+                                Parcours chronologique à travers les grandes périodes de l'histoire de France avec vidéos et animations.
+                            </div>
+                            <a href="https://www.histoire-pour-tous.fr/" class="resource-link">Explorer l'histoire <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <div class="resource-title">
+                                <i class="fas fa-atom"></i> Les sciences en expériences
+                            </div>
+                            <div class="resource-description">
+                                Collection d'expériences scientifiques à réaliser à la maison avec des objets du quotidien.
+                            </div>
+                            <a href="courses/experiences-scientifiques.html" class="resource-link">Voir les expériences <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <a href="library.html" class="view-all-btn">Voir toute la bibliothèque</a>
+                    </div>
+                </div>
+
+                <!-- Fiches de révision et quiz -->
+                <div class="resource-category">
+                    <div class="category-header revisions-header">
+                        <i class="fas fa-tasks"></i> Révisions et Quiz
+                    </div>
+                    <div class="category-content">
+                        <div class="resource-item">
+                            <div class="resource-title">
+                                <i class="fas fa-file-download"></i> Fiches de conjugaison
+                            </div>
+                            <div class="resource-description">
+                                Fiches mémo sur tous les temps et modes de conjugaison, faciles à imprimer et à emporter.
+                            </div>
+                            <a href="fiches/conjugaison-complete.html" class="resource-link">Télécharger les fiches <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-badge popular-badge">Populaire</span>
+                            <div class="resource-title">
+                                <i class="fas fa-question-circle"></i> Quiz de sciences
+                            </div>
+                            <div class="resource-description">
+                                Teste tes connaissances en physique, chimie et biologie avec nos quiz interactifs à difficulté progressive.
+                            </div>
+                            <div class="quiz-preview">
+                                <p>Question exemple: Quelle est la planète la plus proche du soleil?</p>
+                            </div>
+                            <a href="quiz/sciences-interactif.html" class="resource-link">Commencer le quiz <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <div class="resource-title">
+                                <i class="fas fa-file-download"></i> Fiches de révision brevet/bac
+                            </div>
+                            <div class="resource-description">
+                                Synthèses des points clés à maîtriser pour réussir tes examens, créées par des enseignants.
+                            </div>
+                            <a href="fiches/revision-examens.html" class="resource-link">Télécharger les fiches <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-badge new-badge">Nouveau</span>
+                            <div class="resource-title">
+                                <i class="fas fa-stopwatch"></i> Tests chronométrés de mathématiques
+                            </div>
+                            <div class="resource-description">
+                                Entraîne-toi au calcul mental et à la résolution de problèmes avec nos tests minutés.
+                            </div>
+                            <a href="quiz/math-chrono.html" class="resource-link">Commencer l'entraînement <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <a href="revisions.html" class="view-all-btn">Accéder à tous les outils de révision</a>
+                    </div>
+                </div>
+
+                <!-- Applications et jeux éducatifs -->
+                <div class="resource-category">
+                    <div class="category-header apps-header">
+                        <i class="fas fa-gamepad"></i> Applications et Jeux
+                    </div>
+                    <div class="category-content">
+                        <div class="resource-item">
+                            <div class="resource-title">
+                                <i class="fas fa-mobile-alt"></i> MathChallenge
+                            </div>
+                            <div class="resource-description">
+                                Application mobile qui rend les mathématiques amusantes avec des défis quotidiens adaptés à ton niveau.
+                            </div>
+                            <div class="app-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <a href="apps/math-challenge.html" class="resource-link">Télécharger l'application <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <div class="resource-title">
+                                <i class="fas fa-puzzle-piece"></i> GéoExplorer
+                            </div>
+                            <div class="resource-description">
+                                Jeu interactif pour apprendre la géographie mondiale en s'amusant avec des cartes et des défis.
+                            </div>
+                            <div class="app-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <a href="apps/geo-explorer.html" class="resource-link">Jouer en ligne <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-badge popular-badge">Populaire</span>
+                            <div class="resource-title">
+                                <i class="fas fa-language"></i> LinguaFun
+                            </div>
+                            <div class="resource-description">
+                                Application d'apprentissage des langues avec des exercices ludiques, des dialogues et des jeux de vocabulaire.
+                            </div>
+                            <div class="app-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="apps/lingua-fun.html" class="resource-link">Découvrir l'application <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-badge new-badge">Nouveau</span>
+                            <div class="resource-title">
+                                <i class="fas fa-flask"></i> Labo Virtuel
+                            </div>
+                            <div class="resource-description">
+                                Simulations de laboratoire pour réaliser des expériences scientifiques virtuelles dans un environnement sécurisé.
+                            </div>
+                            <div class="app-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <a href="apps/labo-virtuel.html" class="resource-link">Lancer la simulation <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <a href="applications.html" class="view-all-btn">Découvrir toutes les applications</a>
+                    </div>
+                </div>
+
+                <!-- Nouvelle catégorie : Ateliers pratiques -->
+                <div class="resource-category">
+                    <div class="category-header special-header">
+                        <i class="fas fa-hands"></i> Ateliers pratiques
+                    </div>
+                    <div class="category-content">
+                        <div class="resource-item">
+                            <span class="resource-badge new-badge">Nouveau</span>
+                            <div class="resource-title">
+                                <i class="fas fa-pencil-ruler"></i> Atelier créatif d'écriture
+                            </div>
+                            <div class="resource-description">
+                                Sessions guidées pour développer ses compétences en écriture créative avec des exercices progressifs.
+                            </div>
+                            <a href="ateliers/ecriture-creative.html" class="resource-link">Participer à l'atelier <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <div class="resource-title">
+                                <i class="fas fa-robot"></i> Initiation à la robotique
+                            </div>
+                            <div class="resource-description">
+                                Activités pratiques pour découvrir les bases de la robotique et de la programmation avec des projets simples.
+                            </div>
+                            <a href="ateliers/robotique-debutant.html" class="resource-link">Voir les projets <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <div class="resource-title">
+                                <i class="fas fa-palette"></i> Art et sciences
+                            </div>
+                            <div class="resource-description">
+                                Activités créatives mêlant principes scientifiques et expression artistique, parfaites pour les projets scolaires.
+                            </div>
+                            <a href="ateliers/art-sciences.html" class="resource-link">Explorer les activités <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <a href="ateliers.html" class="view-all-btn">Voir tous les ateliers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Tu as une question sur ces ressources ?</h2>
+            <p>Nos spécialistes en éducation peuvent t'aider à trouver les meilleurs outils pour tes besoins.</p>
+            <a href="experts.html" class="btn primary-btn">Parler à un spécialiste</a>
+        </div>
+    </section>
+
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/resources.js"></script>
+    <!-- Ajout du SDK Firebase dans ton fichier HTML -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+
+</body>
+</html>

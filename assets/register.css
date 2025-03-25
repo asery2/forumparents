@@ -1,0 +1,147 @@
+/* Styles de la page d'inscription adaptés à la charte graphique du site principal */
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #00509E; /* Bleu élégant */
+    --secondary-color: #57CC99; /* Vert apaisant */
+    --background-color: #F3F7FA; /* Fond très clair */
+    --text-color: #333; /* Texte principal */
+    --accent-color: #FF6F61; /* Accent pour les boutons */
+    --light-gray: #f5f5f5; /* Pour les sections alternées */
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre standard */
+    --border-radius: 8px; /* Arrondis cohérents */
+    --transition: all 0.3s ease; /* Transition standard */
+}
+
+/* Conteneur principal de la page d'inscription */
+.register-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Titre principal */
+h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 10px auto 20px;
+}
+
+/* Formulaire d'inscription */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 80, 158, 0.2);
+    outline: none;
+}
+
+/* Bouton d'inscription */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+    box-shadow: var(--shadow);
+}
+
+/* Texte au bas de la page */
+.footer-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.footer-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.footer-text a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Logo (si vous en avez un) */
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .register-container {
+        width: 90%;
+        padding: 20px;
+    }
+}

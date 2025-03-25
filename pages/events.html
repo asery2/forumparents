@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Événements</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/events.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../assets/logo.png" alt="Logo du forum" class="logo">
+            <button class="mobile-menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <!--li><a href="index.html">Accueil</a></li-->
+                    <li><a href="forumparent.html">Forum</a></li>
+                    <li><a href="resources.html">Ressources</a></li>
+                    <li><a href="specialistes.html">Spécialistes</a></li>
+                    <li><a href="events.html" class="active">Événements</a></li> 
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" class="cta-button">Se connecter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section events-hero">
+            <div class="hero-content">
+                <h1>Événements pour parents et enfants</h1>
+                <p>Découvrez nos ateliers, conférences et activités pour toute la famille.</p>
+            </div>
+        </section>
+
+        <section class="events-filter-section container">
+            <h2>Trouver des événements</h2>
+            <div class="events-filter">
+                <div class="filter-group">
+                    <label for="event-type">Type d'événement</label>
+                    <select id="event-type">
+                        <option value="all">Tous les types</option>
+                        <option value="workshop">Atelier</option>
+                        <option value="conference">Conférence</option>
+                        <option value="webinar">Webinaire</option>
+                        <option value="activity">Activité enfants</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="event-format">Format</label>
+                    <select id="event-format">
+                        <option value="all">Tous les formats</option>
+                        <option value="online">En ligne</option>
+                        <option value="in-person">Présentiel</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="event-price">Tarif</label>
+                    <select id="event-price">
+                        <option value="all">Tous les tarifs</option>
+                        <option value="free">Gratuit</option>
+                        <option value="paid">Payant</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="event-date">Date</label>
+                    <input type="date" id="event-date">
+                </div>
+                <button class="filter-button">Filtrer</button>
+            </div>
+        </section>
+
+        <section class="calendar-section container">
+            <h2>Calendrier des événements</h2>
+            <div class="calendar-navigation">
+                <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                <h3 id="current-month">Mars 2025</h3>
+                <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mer</div>
+                    <div>Jeu</div>
+                    <div>Ven</div>
+                    <div>Sam</div>
+                    <div>Dim</div>
+                </div>
+                <div class="calendar-days">
+                    <!-- Jours générés dynamiquement via JavaScript -->
+                    <div class="prev-month">24</div>
+                    <div class="prev-month">25</div>
+                    <div class="prev-month">26</div>
+                    <div class="prev-month">27</div>
+                    <div class="prev-month">28</div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div>13</div>
+                    <div>14</div>
+                    <div>15</div>
+                    <div class="has-event">16</div>
+                    <div>17</div>
+                    <div class="has-event">18</div>
+                    <div>19</div>
+                    <div>20</div>
+                    <div class="current-day has-event">21</div>
+                    <div>22</div>
+                    <div>23</div>
+                    <div class="has-event">24</div>
+                    <div>25</div>
+                    <div>26</div>
+                    <div class="has-event">27</div>
+                    <div>28</div>
+                    <div class="has-event">29</div>
+                    <div>30</div>
+                    <div>31</div>
+                    <div class="next-month">1</div>
+                    <div class="next-month">2</div>
+                    <div class="next-month">3</div>
+                    <div class="next-month">4</div>
+                </div>
+            </div>
+            <div class="calendar-legend">
+                <div class="legend-item">
+                    <span class="legend-dot current-day-dot"></span>
+                    <span>Aujourd'hui</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot event-dot"></span>
+                    <span>Événement prévu</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="upcoming-events container">
+            <h2>Événements à venir</h2>
+            <div class="events-grid">
+                <div class="event-card" data-type="webinar" data-format="online" data-price="free">
+                    <div class="event-date">
+                        <span class="event-day">21</span>
+                        <span class="event-month">Mars</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-tag online">Webinaire</span>
+                        <span class="event-tag free">Gratuit</span>
+                        <h3>La communication positive avec les adolescents</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 19h00 - 20h30</p>
+                        <p class="event-description">Apprenez à établir un dialogue constructif avec votre adolescent et à gérer les situations de conflit.</p>
+                        <div class="event-speaker">
+                            <img src="../assets/speaker1.jpg" alt="Dr. Sophie Martin">
+                            <span>Dr. Sophie Martin, Psychologue</span>
+                        </div>
+                        <a href="#" class="cta-button">S'inscrire</a>
+                    </div>
+                </div>
+
+                <div class="event-card" data-type="workshop" data-format="in-person" data-price="paid">
+                    <div class="event-date">
+                        <span class="event-day">24</span>
+                        <span class="event-month">Mars</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-tag in-person">Présentiel</span>
+                        <span class="event-tag paid">9 840 XOF (15€)</span>
+                        <h3>Atelier Montessori pour parents et enfants</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 14h00 - 16h00</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Centre culturel, 15 rue des Lilas</p>
+                        <p class="event-description">Découvrez les principes de la pédagogie Montessori et participez à des activités pratiques avec votre enfant.</p>
+                        <a href="#" class="cta-button">Réserver</a>
+                    </div>
+                </div>
+
+                <div class="event-card" data-type="conference" data-format="online" data-price="paid">
+                    <div class="event-date">
+                        <span class="event-day">18</span>
+                        <span class="event-month">Mars</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-tag online">En ligne</span>
+                        <span class="event-tag paid">6 560 XOF (10€)</span>
+                        <h3>Conférence : Surdoué et heureux à l'école</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 20h00 - 21h30</p>
+                        <p class="event-description">Comment accompagner un enfant à haut potentiel pour qu'il s'épanouisse dans son parcours scolaire.</p>
+                        <div class="event-speaker">
+                            <img src="../assets/speaker2.jpg" alt="Prof. Jean Dupont">
+                            <span>Prof. Jean Dupont, Chercheur en éducation</span>
+                        </div>
+                        <a href="#" class="cta-button">S'inscrire</a>
+                    </div>
+                </div>
+
+                <div class="event-card" data-type="activity" data-format="in-person" data-price="free">
+                    <div class="event-date">
+                        <span class="event-day">16</span>
+                        <span class="event-month">Mars</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-tag in-person">Présentiel</span>
+                        <span class="event-tag free">Gratuit</span>
+                        <h3>Après-midi jeux de société éducatifs</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 15h00 - 17h30</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Médiathèque municipale</p>
+                        <p class="event-description">Venez découvrir une sélection de jeux de société qui stimulent l'apprentissage tout en s'amusant.</p>
+                        <a href="#" class="cta-button">Participer</a>
+                    </div>
+                </div>
+                
+                <!-- Premier événement ajouté -->
+                <div class="event-card" data-type="workshop" data-format="in-person" data-price="paid">
+                    <div class="event-date">
+                        <span class="event-day">27</span>
+                        <span class="event-month">Mars</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-tag in-person">Présentiel</span>
+                        <span class="event-tag paid">13 120 XOF (20€)</span>
+                        <h3>Atelier cuisine parents-enfants</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 10h00 - 12h30</p>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> Restaurant école Le Gourmet, 8 rue des Saveurs</p>
+                        <p class="event-description">Apprenez à cuisiner des recettes saines et gourmandes avec vos enfants. Idéal pour les 6-12 ans.</p>
+                        <div class="event-speaker">
+                            <img src="../assets/speaker3.jpg" alt="Chef Marie Laurent">
+                            <span>Chef Marie Laurent, Nutritionniste</span>
+                        </div>
+                        <a href="#" class="cta-button">Réserver</a>
+                    </div>
+                </div>
+                
+                <!-- Deuxième événement ajouté -->
+                <div class="event-card" data-type="webinar" data-format="online" data-price="free">
+                    <div class="event-date">
+                        <span class="event-day">29</span>
+                        <span class="event-month">Mars</span>
+                    </div>
+                    <div class="event-details">
+                        <span class="event-tag online">Webinaire</span>
+                        <span class="event-tag free">Gratuit</span>
+                        <h3>Les écrans et les enfants : trouver le bon équilibre</h3>
+                        <p class="event-time"><i class="far fa-clock"></i> 18h30 - 20h00</p>
+                        <p class="event-description">Comment gérer le temps d'écran des enfants et adolescents, et les accompagner vers une utilisation responsable du numérique.</p>
+                        <div class="event-speaker">
+                            <img src="../assets/speaker4.jpg" alt="Dr. Thomas Renard">
+                            <span>Dr. Thomas Renard, Pédopsychiatre</span>
+                        </div>
+                        <a href="#" class="cta-button">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more-container">
+                <a href="#" class="view-more-btn">Voir plus d'événements <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section class="recommended-events container">
+            <h2>Événements recommandés pour vous</h2>
+            <p class="section-intro">Basé sur vos intérêts et activités précédentes</p>
+            <div class="events-slider">
+                <button class="slider-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                <div class="events-slider-container">
+                    <div class="event-slide">
+                        <div class="event-card horizontal">
+                            <img src="../assets/event1.jpg" alt="Atelier lecture" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag online">Webinaire</span>
+                                <h3>Comment donner le goût de la lecture aux enfants</h3>
+                                <p class="event-time"><i class="far fa-calendar-alt"></i> 2 Avril 2025</p>
+                                <a href="#" class="cta-button small">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-slide">
+                        <div class="event-card horizontal">
+                            <img src="../assets/event2.jpg" alt="Gestion émotions" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag in-person">Atelier</span>
+                                <h3>Aider son enfant à gérer ses émotions</h3>
+                                <p class="event-time"><i class="far fa-calendar-alt"></i> 8 Avril 2025</p>
+                                <a href="#" class="cta-button small">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-slide">
+                        <div class="event-card horizontal">
+                            <img src="../assets/event3.jpg" alt="Nutrition enfants" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag online">Conférence</span>
+                                <h3>Nutrition et santé chez l'enfant</h3>
+                                <p class="event-time"><i class="far fa-calendar-alt"></i> 15 Avril 2025</p>
+                                <a href="#" class="cta-button small">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="host-event container">
+            <div class="host-event-content">
+                <h2>Vous souhaitez organiser un événement ?</h2>
+                <p>Partagez vos connaissances et compétences avec notre communauté de parents.</p>
+                <ul class="host-benefits">
+                    <li><i class="fas fa-users"></i> Touchez une audience engagée et intéressée</li>
+                    <li><i class="fas fa-star"></i> Bénéficiez de notre plateforme de promotion</li>
+                    <li><i class="fas fa-hand-holding-heart"></i> Contribuez à soutenir d'autres parents</li>
+                </ul>
+                <a href="#" class="cta-button">Proposer un événement</a>
+            </div>
+            <div class="host-event-image">
+                <img src="../assets/7.jpg" alt="Organiser un événement">
+            </div>
+        </section>
+
+        <!-- Session chat -->
+        <div class="chat-widget">
+            <div class="chat-button" id="chatButton">
+                <i class="fas fa-comments"></i>
+            </div>
+            <div class="chat-popup" id="chatPopup">
+                <div class="chat-header">
+                    <span>Discussion instantanée</span>
+                    <span class="close-chat" id="closeChat">×</span>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Les messages s'afficheront ici -->
+                    <div class="message received">
+                        <div class="message-content">
+                            Bonjour ! Comment puis-je vous aider aujourd'hui ?
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="messageInput" placeholder="Tapez votre message..." />
+                    <button id="sendMessage">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/chat.js"></script>
+    <script src="../js/events.js"></script>
+    <!-- Ajout du SDK Firebase dans ton fichier HTML -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1232 @@
+:root {
+    --primary-color: #00509E; /* Bleu élégant */
+    --secondary-color: #57CC99; /* Vert apaisant */
+    --background-color: #F3F7FA; /* Fond très clair */
+    --text-color: #333; /* Texte principal */
+    --accent-color: #FF6F61; /* Accent pour les boutons */
+    --light-gray: #f5f5f5; /* Pour les sections alternées */
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre standard */
+    --border-radius: 8px; /* Arrondis cohérents */
+    --transition: all 0.3s ease; /* Transition standard */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Reset des styles de base du corps */
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Supprime la barre de défilement principale */
+    height: 100vh;
+    overflow-x: hidden; /* Empêche le défilement horizontal comme dans le fichier 1 */
+    overflow-y: auto; /* Permet le défilement vertical */
+    height: auto; /* Annuler la hauteur fixe pour permettre le défilement */
+}
+
+/* Structure de base avec header fixe */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo img {
+    margin-right: 8px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.dropdown-button:hover {
+    color: var(--secondary-color);
+}
+
+.dropdown-button i {
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: var(--transition);
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+
+/* BARRE DE RECHERCHE */
+.search-container {
+    position: relative;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    transition: var(--transition);
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-container input:focus {
+    background-color: white;
+    color: var(--text-color);
+    outline: none;
+}
+
+.search-container input:focus::placeholder {
+    color: #999;
+}
+
+.search-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+}
+
+.search-container input:focus + i {
+    color: var(--primary-color);
+}
+
+/* BOUTONS NAVBAR */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.icon-button {
+    color: white;
+    background: none;
+    border: none;
+    padding: 10px;
+    margin-left: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.icon-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+}
+
+.user-button {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.user-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+    margin-right: 8px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* CONTENU PRINCIPAL */
+.main-container {
+    display: grid;
+    grid-template-columns: 240px 1fr 300px;
+    grid-gap: 20px;
+    height: calc(100vh - 60px); /* Soustrait la hauteur du header */
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow: hidden; /* Empêche le défilement du conteneur principal */
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.left-sidebar, .right-sidebar {
+    position: sticky;
+    top: 0;
+    height: 100%;
+    overflow-y: auto; /* Défilement individuel pour chaque sidebar */
+    padding: 20px 10px;
+    
+    /* Barres de défilement invisibles sauf au survol/utilisation */
+    scrollbar-width: none; /* Pour Firefox */
+}
+
+/* Masquer les barres de défilement par défaut pour Webkit */
+.left-sidebar::-webkit-scrollbar, 
+.right-sidebar::-webkit-scrollbar,
+.content-feed::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+    opacity: 0;
+}
+
+/* Afficher les barres de défilement au survol uniquement */
+.left-sidebar:hover::-webkit-scrollbar, 
+.right-sidebar:hover::-webkit-scrollbar,
+.content-feed:hover::-webkit-scrollbar {
+    opacity: 1;
+}
+
+.left-sidebar::-webkit-scrollbar-thumb, 
+.right-sidebar::-webkit-scrollbar-thumb,
+.content-feed::-webkit-scrollbar-thumb {
+    background-color: rgba(204, 204, 204, 0.5);
+    border-radius: 3px;
+}
+
+.left-sidebar:hover::-webkit-scrollbar-thumb, 
+.right-sidebar:hover::-webkit-scrollbar-thumb,
+.content-feed:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(204, 204, 204, 0.8);
+}
+
+.sidebar-section {
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.sidebar-section h3 {
+    color: var(--primary-color);
+    padding: 15px;
+    border-bottom: 1px solid var(--light-gray);
+    margin: 0;
+}
+
+.forum-list, .topic-list {
+    list-style: none;
+}
+
+.forum-list li, .topic-list li {
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.forum-list li:last-child, .topic-list li:last-child {
+    border-bottom: none;
+}
+
+.forum-list a, .topic-list a {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.forum-list a:hover, .topic-list a:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+
+.forum-list img, .topic-list i {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.show-more {
+    display: block;
+    padding: 12px 15px;
+    text-align: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    background-color: var(--light-gray);
+    transition: var(--transition);
+}
+
+.show-more:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* CONTENU CENTRAL */
+.content-feed {
+    overflow-y: auto; /* Seul le contenu central défile */
+    height: 100%;
+    padding: 20px 0;
+    scrollbar-width: none; /* Pour Firefox */
+}
+
+/* FILTRES */
+.feed-filters {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-options {
+    display: flex;
+}
+
+.view-options button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    transition: var(--transition);
+}
+
+.view-options button i {
+    margin-right: 5px;
+}
+
+.view-options button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.view-options button:not(.active):hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+
+.display-options button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.display-options button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.display-options button:not(.active):hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+
+/* PUBLICATIONS */
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.post {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-votes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    background-color: var(--light-gray);
+}
+
+.upvote, .downvote {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    transition: var(--transition);
+}
+
+.upvote:hover {
+    color: var(--secondary-color);
+}
+
+.downvote:hover {
+    color: var(--accent-color);
+}
+
+.vote-count {
+    margin: 5px 0;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.post-content {
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.post-community {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+.post-community:hover {
+    color: var(--accent-color);
+}
+
+.post-community img {
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.post-metadata {
+    color: #777;
+}
+
+.post-metadata a {
+    color: #777;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.post-metadata a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.post-title {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.post-text {
+    margin-bottom: 15px;
+}
+
+.post-image {
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.post-actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    color: #777;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.post-actions button i {
+    margin-right: 5px;
+}
+
+.post-actions button:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+
+/* BARRE LATÉRALE DROITE */
+.sidebar-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Style pour la carte premium fixe en haut */
+.premium-card {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #00509E, #0070BA);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin-bottom: 15px;
+}
+
+.premium-card img {
+    margin-right: 15px;
+}
+
+.premium-card h3 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.premium-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.premium-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.community-card .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.community-card .card-header img {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.community-card h3 {
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.community-card p {
+    color: #777;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat .number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat .label {
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.community-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    width: 100%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.community-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.rules-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.rules-list {
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+.rules-list li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.sidebar-footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    padding-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #777;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.copyright {
+    color: #777;
+}
+
+/* MODAL */
+.create-post-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+}
+
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--light-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #777;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--accent-color);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.community-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.community-selector span {
+    margin-right: 10px;
+}
+
+.community-selector select {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    background-color: white;
+}
+
+.post-type-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-type-tabs .tab {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.post-type-tabs .tab.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.post-type-tabs .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.post-title-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.post-editor {
+    margin-bottom: 15px;
+}
+
+.post-editor textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.editor-toolbar {
+    display: flex;
+    background-color: var(--light-gray);
+    padding: 10px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.editor-toolbar button {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.editor-toolbar button:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.post-tags input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cancel-button {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cancel-button:hover {
+    background-color: #ccc;
+}
+
+.post-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.post-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .main-container {
+        grid-template-columns: 200px 1fr 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow: auto;
+    }
+    
+    .left-sidebar, .right-sidebar {
+        display: none;
+    }
+    
+    .content-feed {
+        height: auto;
+    }
+    
+    .navbar {
+        padding: 0 10px;
+    }
+    
+    .search-container {
+        display: none;
+    }
+    
+    .navbar-right .icon-button {
+        display: none;
+    }
+    
+    .navbar-right .user-dropdown {
+        margin-left: auto;
+    }
+    
+    .user-button span {
+        display: none;
+    }
+    
+    .feed-filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .post {
+        flex-direction: column;
+    }
+    
+    .post-votes {
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+    }
+    
+    .vote-count {
+        margin: 0 10px;
+    }
+    
+    .post-actions {
+        justify-content: space-between;
+    }
+    
+    .post-actions button span {
+        display: none;
+    }
+    
+    .post-actions button i {
+        margin-right: 0;
+    }
+}
+
+/* DARK MODE */
+body.dark-mode {
+    --background-color: #222;
+    --text-color: #f0f0f0;
+    --light-gray: #333;
+}
+
+body.dark-mode .post,
+body.dark-mode .sidebar-section,
+body.dark-mode .sidebar-card,
+body.dark-mode .feed-filters,
+body.dark-mode .modal-content {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+body.dark-mode .post-title,
+body.dark-mode .sidebar-section h3,
+body.dark-mode .community-card h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .post-metadata,
+body.dark-mode .post-actions button,
+body.dark-mode .community-card p {
+    color: #aaa;
+}
+
+body.dark-mode .post-votes {
+    background-color: #444;
+}
+
+/* Modification des scrollbars globales - cachées par défaut et subtiles au survol */
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 80, 158, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 80, 158, 0.5);
+}
+
+/* Pour Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 80, 158, 0.2) transparent;
+}
+
+/* header interactif*/
+/* Styles pour les dropdowns interactifs */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 100;
+    min-width: 200px;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+/* Styles pour les boutons de vote actifs */
+.upvote.voted {
+    color: #FF4500;
+}
+
+.downvote.voted {
+    color: #7193FF;
+}
+
+/* Style pour le modal de création de post */
+.create-post-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style pour la barre de défilement du modal */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: rgba(204, 204, 204, 0.5);
+    border-radius: 3px;
+}
+
+/* Ajustement pour une barre de défilement unique à l'extrême droite en style Reddit */
+@media (min-width: 769px) {
+    body {
+        overflow: overlay; /* Permet à la barre de défilement de flotter par-dessus le contenu */
+    }
+    
+    .main-container {
+        overflow: visible; /* Annule le overflow:hidden pour permettre la barre de défilement principale */
+        max-height: calc(100vh - 60px);
+    }
+    
+    /* Cache les barres de défilement individuelles au profit d'une barre générale */
+    .left-sidebar, .right-sidebar, .content-feed {
+        scrollbar-width: none;
+    }
+    
+    .left-sidebar::-webkit-scrollbar, 
+    .right-sidebar::-webkit-scrollbar,
+    .content-feed::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Utilisation d'une barre de défilement unique à droite */
+    .main-container {
+        position: relative;
+    }
+}
+/* Supprimer le style overlay qui était différent du fichier 1 */
+@media (min-width: 769px) {
+    body {
+        overflow: auto; /* Remplace overflow: overlay qui n'existe pas dans le fichier 1 */
+    }
+}
+
+/* Modification du conteneur principal pour permettre le défilement comme dans le fichier 1 */
+.main-container {
+    display: grid;
+    grid-template-columns: 240px 1fr 300px;
+    grid-gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: auto; /* Permet le défilement naturel */
+    overflow: visible; /* Pour permettre le défilement */
+}
+
+/* Ajustement des sidebars pour qu'elles soient fixes comme dans le fichier 1 */
+.left-sidebar, .right-sidebar {
+    position: sticky;
+    top: 60px; /* Sous le header qui fait 60px */
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding: 20px 10px;
+}
+
+/* Style de barre de défilement similaire au fichier 1 */
+.left-sidebar::-webkit-scrollbar, 
+.right-sidebar::-webkit-scrollbar,
+.content-feed::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+}
+
+.left-sidebar:hover::-webkit-scrollbar-thumb, 
+.right-sidebar:hover::-webkit-scrollbar-thumb,
+.content-feed:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(204, 204, 204, 0.8);
+    border-radius: 3px;
+}
+
+/* Ajustement pour que le bloc premium reste fixe en haut de la sidebar droite */
+.premium-card {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin-bottom: 15px;
+    /* Ajout d'une bordure arrondie cohérente */
+    border-radius: var(--border-radius);
+}
+
+/* S'assurer que le contenu central défile correctement */
+.content-feed {
+    overflow-y: auto;
+    height: calc(100vh - 60px); /* Hauteur ajustée sous le header */
+    padding: 20px 0;
+}
+
+/* Ajustement responsive comme dans le fichier 1 */
+@media (max-width: 1200px) {
+    .main-container {
+        grid-template-columns: 240px 1fr 280px;
+    }
+    .right-sidebar {
+        width: 280px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-container {
+        grid-template-columns: 200px 1fr 250px;
+    }
+    .left-sidebar {
+        width: 200px;
+    }
+    .right-sidebar {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .left-sidebar, .right-sidebar {
+        display: none;
+    }
+    
+    .content-feed {
+        margin-left: 0;
+        margin-right: 0;
+        height: auto;
+    }
+    
+    /* Afficher un bouton menu hamburger pour mobile comme dans le fichier 1 */
+    .mobile-menu-toggle {
+        display: block;
+        margin-right: 16px;
+        font-size: 20px;
+        color: white;
+    }
+}
+
+/* Supprimer les styles qui modifient la barre de défilement globale pour être cohérent avec le fichier 1 */
+::-webkit-scrollbar {
+    width: auto;
+    background-color: initial;
+}
+
+::-webkit-scrollbar-track {
+    background: initial;
+}
+
+::-webkit-scrollbar-thumb {
+    background: initial;
+    border-radius: initial;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: initial;
+}
+
+/* Pour Firefox, revenir aux styles par défaut */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: initial;
+}

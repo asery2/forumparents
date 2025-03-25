@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spécialistes | Parents Engagés</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/specialistes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- En-tête de la page -->
+        <header>
+            <div class="header-container">
+                <img src="../assets/logo.png" alt="Logo du forum" class="logo">
+                <button class="mobile-menu-toggle">☰</button>
+                <nav>
+                    <ul>
+                        <!--li><a href="index.html">Accueil</a></li-->
+                        <li><a href="forumparent.html">Forum</a></li>
+                        <li><a href="resources.html">Ressources</a></li>
+                        <li><a href="specialistes.html" class="active">Spécialistes</a></li>
+                        <li><a href="events.html">Evenements</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                        <li><a href="logout.html" class="cta-button">Se déconnecter</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Consultation avec des Spécialistes</h1>
+            <p>Prenez rendez-vous avec des professionnels qualifiés pour accompagner votre enfant</p>
+        </section>
+
+        <!-- Section authentification requise (visible uniquement si non connecté) -->
+        <section id="auth-required" class="auth-required">
+            <i class="fas fa-lock fa-3x" style="color: #4a6cad; margin-bottom: 1rem;"></i>
+            <h2>Accès réservé aux membres</h2>
+            <p>Pour accéder à l'annuaire des spécialistes et prendre rendez-vous, veuillez vous connecter ou créer un compte.</p>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-primary">Se connecter</a>
+                <a href="register.html" class="secondary-button">S'inscrire</a>
+            </div>
+        </section>
+
+        <!-- Contenu réservé aux utilisateurs connectés -->
+        <div id="specialists-content" style="display: none;">
+            <!-- Filtres de recherche -->
+            <section class="search-filters">
+                <h2>Rechercher un spécialiste</h2>
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label for="speciality">Spécialité</label>
+                        <select id="speciality">
+                            <option value="">Toutes les spécialités</option>
+                            <option value="orthophoniste">Orthophoniste</option>
+                            <option value="psychologue">Psychologue</option>
+                            <option value="educateur">Éducateur spécialisé</option>
+                            <option value="psychomotricien">Psychomotricien</option>
+                            <option value="ergotherapeute">Ergothérapeute</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="location">Localisation</label>
+                        <select id="location">
+                            <option value="">Toutes les villes</option>
+                            <option value="paris">Paris</option>
+                            <option value="lyon">Lyon</option>
+                            <option value="marseille">Marseille</option>
+                            <option value="bordeaux">Bordeaux</option>
+                            <option value="lille">Lille</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="availability">Disponibilité</label>
+                        <select id="availability">
+                            <option value="">Toutes les disponibilités</option>
+                            <option value="this-week">Cette semaine</option>
+                            <option value="next-week">Semaine prochaine</option>
+                            <option value="online">Consultation en ligne</option>
+                        </select>
+                    </div>
+                    <button id="filter-button" class="btn btn-primary">Filtrer</button>
+                </div>
+            </section>
+
+            <!-- Annuaire des spécialistes -->
+            <section class="specialists-directory">
+                <h2>Annuaire des spécialistes</h2>
+                <div class="directory-list">
+                    <!-- Spécialiste 1 -->
+                    <article class="specialist-card">
+                        <div class="specialist-header">
+                            <img src="images/specialist-1.jpg" alt="Dr. Emma Martin" class="specialist-avatar">
+                            <div class="specialist-info">
+                                <h3>Dr. Emma Martin</h3>
+                                <span class="specialist-title">Orthophoniste spécialisée</span>
+                                <div class="specialist-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(32 avis)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="specialist-details">
+                            <div class="specialist-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Paris 15ème - Consultations en cabinet et en ligne</span>
+                            </div>
+                            <div class="specialist-expertise">
+                                <h4>Domaines d'expertise</h4>
+                                <div class="expertise-tags">
+                                    <span>Troubles du langage</span>
+                                    <span>Dyslexie</span>
+                                    <span>Difficultés d'apprentissage</span>
+                                    <span>Bégaiement</span>
+                                </div>
+                            </div>
+                            <p class="specialist-description">
+                                Spécialiste en orthophonie avec 12 ans d'expérience, je me concentre sur l'aide aux enfants présentant des troubles du langage et des difficultés d'apprentissage. Mon approche combine méthodes traditionnelles et innovations pédagogiques.
+                            </p>
+                        </div>
+                        <div class="specialist-actions">
+                            <a href="#" class="contact-button" data-specialist="1">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </a>
+                            <a href="#" class="appointment-button" data-specialist="1">
+                                <i class="fas fa-calendar-alt"></i> Prendre RDV
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Spécialiste 2 -->
+                    <article class="specialist-card">
+                        <div class="specialist-header">
+                            <img src="images/specialist-2.jpg" alt="Thomas Bernard" class="specialist-avatar">
+                            <div class="specialist-info">
+                                <h3>Thomas Bernard</h3>
+                                <span class="specialist-title">Psychologue pour enfants</span>
+                                <div class="specialist-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(47 avis)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="specialist-details">
+                            <div class="specialist-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Lyon Centre - Consultations en cabinet uniquement</span>
+                            </div>
+                            <div class="specialist-expertise">
+                                <h4>Domaines d'expertise</h4>
+                                <div class="expertise-tags">
+                                    <span>Anxiété</span>
+                                    <span>TDAH</span>
+                                    <span>Problèmes comportementaux</span>
+                                    <span>Troubles émotionnels</span>
+                                </div>
+                            </div>
+                            <p class="specialist-description">
+                                Psychologue clinicien spécialisé dans le développement de l'enfant et de l'adolescent. J'offre un soutien personnalisé aux enfants et à leurs familles pour surmonter les défis émotionnels et comportementaux, en créant un environnement sûr et bienveillant.
+                            </p>
+                        </div>
+                        <div class="specialist-actions">
+                            <a href="#" class="contact-button" data-specialist="2">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </a>
+                            <a href="#" class="appointment-button" data-specialist="2">
+                                <i class="fas fa-calendar-alt"></i> Prendre RDV
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Spécialiste 3 -->
+                    <article class="specialist-card">
+                        <div class="specialist-header">
+                            <img src="images/specialist-3.jpg" alt="Sophie Dupont" class="specialist-avatar">
+                            <div class="specialist-info">
+                                <h3>Sophie Dupont</h3>
+                                <span class="specialist-title">Éducatrice spécialisée</span>
+                                <div class="specialist-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(24 avis)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="specialist-details">
+                            <div class="specialist-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Marseille - Consultations à domicile et en ligne</span>
+                            </div>
+                            <div class="specialist-expertise">
+                                <h4>Domaines d'expertise</h4>
+                                <div class="expertise-tags">
+                                    <span>Troubles du spectre autistique</span>
+                                    <span>Intégration scolaire</span>
+                                    <span>Médiation familiale</span>
+                                    <span>Développement social</span>
+                                </div>
+                            </div>
+                            <p class="specialist-description">
+                                Éducatrice spécialisée avec une approche centrée sur la famille, j'accompagne les enfants ayant des besoins particuliers et leurs parents. Je propose des stratégies pratiques pour favoriser l'autonomie et l'épanouissement de chaque enfant dans son environnement scolaire et familial.
+                            </p>
+                        </div>
+                        <div class="specialist-actions">
+                            <a href="#" class="contact-button" data-specialist="3">
+                                <i class="fas fa-envelope"></i> Contacter
+                            </a>
+                            <a href="#" class="appointment-button" data-specialist="3">
+                                <i class="fas fa-calendar-alt"></i> Prendre RDV
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- Modal de prise de rendez-vous -->
+        <div id="appointment-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Prendre rendez-vous avec <span id="specialist-name">Spécialiste</span></h2>
+                
+                <div class="appointment-scheduler">
+                    <!-- Sélection de date -->
+                    <div class="calendar-container">
+                        <h3>Choisir une date</h3>
+                        <div class="calendar-header">
+                            <button id="prev-month">&lt;</button>
+                            <h4 id="current-month">Mars 2025</h4>
+                            <button id="next-month">&gt;</button>
+                        </div>
+                        <div class="calendar-days">
+                            <div>L</div>
+                            <div>M</div>
+                            <div>M</div>
+                            <div>J</div>
+                            <div>V</div>
+                            <div>S</div>
+                            <div>D</div>
+                        </div>
+                        <div class="calendar-dates">
+                            <!-- Les dates seront générées par JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Sélection des créneaux horaires -->
+                    <div class="time-slots">
+                        <h3>Choisir un horaire</h3>
+                        <p id="selected-date">Veuillez d'abord sélectionner une date</p>
+                        
+                        <div class="slots-container">
+                            <!-- Les créneaux seront générés par JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formulaire de prise de rendez-vous -->
+                <div class="appointment-form">
+                    <h3>Informations pour le rendez-vous</h3>
+                    <div class="form-group">
+                        <label for="appointment-type">Type de consultation</label>
+                        <select id="appointment-type">
+                            <option value="in-person">En cabinet</option>
+                            <option value="online">En ligne (vidéo)</option>
+                            <option value="home">À domicile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Motif de consultation</label>
+                        <select id="reason">
+                            <option value="">Sélectionnez un motif</option>
+                            <option value="initial">Première consultation</option>
+                            <option value="followup">Suivi</option>
+                            <option value="evaluation">Évaluation</option>
+                            <option value="other">Autre (précisez)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Précisions (facultatif)</label>
+                        <textarea id="notes" rows="4" placeholder="Décrivez brièvement votre besoin ou tout détail important à communiquer au spécialiste..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button class="secondary-button" id="cancel-appointment">Annuler</button>
+                        <button class="btn btn-primary" id="confirm-appointment">Confirmer le rendez-vous</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal de confirmation -->
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="confirmation-message">
+                    <i class="fas fa-check-circle fa-4x" style="color: #4CAF50; margin-bottom: 1rem;"></i>
+                    <h2>Rendez-vous confirmé !</h2>
+                    <p>Votre rendez-vous avec <span id="confirmed-specialist">Spécialiste</span> a été programmé pour <span id="confirmed-date">date et heure</span>.</p>
+                    <p>Un e-mail de confirmation vous a été envoyé avec tous les détails.</p>
+                    <div class="form-actions" style="justify-content: center; margin-top: 2rem;">
+                        <button class="btn btn-primary" id="close-confirmation">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat en direct (widget flottant) -->
+        <div class="chat-widget" id="chat-widget">
+            <div class="chat-header">
+                <i class="fas fa-comments"></i> Besoin d'aide ?
+                <button class="minimize-chat"><i class="fas fa-minus"></i></button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-messages">
+                    <div class="message support">
+                        <div class="message-content">
+                            Bonjour ! Comment puis-je vous aider à trouver le bon spécialiste ?
+                        </div>
+                        <div class="message-time">14:30</div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Posez votre question ici...">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+            <div class="chat-button" id="chat-button">
+                <i class="fas fa-comments"></i>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/chat.js"></script>
+    <script src="../js/specialistes.js"></script>
+    <!-- Ajout du SDK Firebase dans ton fichier HTML -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+
+</body>
+</html>

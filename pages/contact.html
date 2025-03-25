@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous | Nom de votre application</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <!-- Ajout du CDN Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+</head>
+<header>
+    <div class="header-container">
+        <img src="../assets/logo.png" alt="Logo du forum" class="logo">
+        <button class="mobile-menu-toggle">☰</button>
+        <nav>
+            <ul>
+                <!--li><a href="index.html">Accueil</a></li-->
+                <li><a href="forumparent.html">Forum</a></li>
+                <li><a href="resources.html">Ressources</a></li>
+                <li><a href="specialistes.html">Spécialistes</a></li>
+                <li><a href="events.html">Événements</a></li> 
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="login.html" class="cta-button">Se connecter</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Contactez-nous</h1>
+            <p>Notre équipe est à votre écoute pour répondre à toutes vos questions.</p>
+        </div>
+    </section>
+    
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Envoyez-nous un message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <select id="subject" name="subject">
+                            <option value="question">Question générale</option>
+                            <option value="support">Support technique</option>
+                            <option value="feedback">Commentaires et suggestions</option>
+                            <option value="partnership">Demande de partenariat</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Envoyer le message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h2>Informations de contact</h2>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-content">
+                        <h3>Notre adresse</h3>
+                        <p>Cocody Angré Terminus 81, Abidjan, Côte d'Ivoire</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="info-content">
+                        <h3>Téléphone</h3>
+                        <p>+225 01 01 01 07 01</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>contact@parentsforum.ci</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="info-content">
+                        <h3>Heures d'ouverture</h3>
+                        <p>Lundi - Vendredi: 9h00 - 18h00</p>
+                    </div>
+                </div>
+                
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15890.110633058257!2d-3.9951287302246103!3d5.402636699999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1edd06d6b1a0f%3A0x2bb2761ef03a2f0f!2sTeminus%2081%2C%20Cocody%20Angr%C3%A9!5e0!3m2!1sfr!2sci!4v1716510148362!5m2!1sfr!2sci" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+    </section>
+    
+    <section class="faq-section">
+        <h2 class="text-center">Questions fréquemment posées</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Comment créer un compte sur votre plateforme ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Pour créer un compte, cliquez sur "Se connecter" dans le menu principal, puis sélectionnez "Créer un compte". Remplissez le formulaire avec vos informations personnelles, acceptez les conditions d'utilisation et cliquez sur "S'inscrire". Vous recevrez ensuite un email de confirmation pour activer votre compte.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Est-ce que l'inscription est gratuite ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Oui, l'inscription de base à notre plateforme est entièrement gratuite. Elle vous donne accès au forum de discussion, aux ressources éducatives de base et à la participation aux événements publics. Nous proposons également des services premium avec des fonctionnalités supplémentaires pour les parents qui souhaitent un accompagnement plus personnalisé.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Comment prendre rendez-vous avec un spécialiste ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Pour prendre rendez-vous avec un spécialiste, consultez la page "Spécialistes" où vous trouverez la liste de nos experts. Sélectionnez le professionnel qui correspond à vos besoins, consultez son calendrier de disponibilités et choisissez un créneau qui vous convient. Vous recevrez une confirmation par email et un rappel 24 heures avant votre rendez-vous.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Puis-je participer aux discussions sans créer de compte ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Non, pour participer activement aux discussions dans notre forum, vous devez créer un compte. Cela nous permet de maintenir un environnement sécurisé et bienveillant pour tous les parents. Cependant, vous pouvez consulter certaines ressources et articles sans être connecté.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Comment puis-je proposer un sujet de discussion ou un événement ?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Pour proposer un nouveau sujet de discussion, rendez-vous sur le forum et cliquez sur "Nouveau sujet". Pour suggérer un événement, utilisez le formulaire de contact ci-dessus en sélectionnant "Autre" comme sujet et en détaillant votre proposition d'événement. Notre équipe l'examinera et reviendra vers vous rapidement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Session chat (identique à la page d'accueil) -->
+    <div class="chat-widget">
+        <div class="chat-button" id="chatButton">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-header">
+                <span>Discussion instantanée</span>
+                <span class="close-chat" id="closeChat">×</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Les messages s'afficheront ici -->
+                <div class="message received">
+                    <div class="message-content">
+                        Bonjour ! Comment puis-je vous aider aujourd'hui ?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Tapez votre message..." />
+                <button id="sendMessage">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div id="footer"></div>
+
+    
+    <script>
+        // Configuration Firebase
+        const firebaseConfig = {
+            apiKey: "VOTRE_API_KEY",
+            authDomain: "votre-auth-domain.firebaseapp.com",
+            projectId: "votre-project-id",
+            storageBucket: "votre-storage-bucket.appspot.com",
+            messagingSenderId: "votre-sender-id",
+            appId: "votre-app-id",
+        };
+
+        // Initialisation de Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore(app);
+
+        // Exemple d'envoi de données à Firestore
+        const envoyerFormulaire = async (formData) => {
+            try {
+                const docRef = await db.collection("contacts").add({
+                    nom: formData.nom,
+                    email: formData.email,
+                    message: formData.message,
+                });
+                console.log("Document ajouté avec ID: ", docRef.id);
+            } catch (e) {
+                console.error("Erreur lors de l'ajout du document: ", e);
+            }
+        };
+    </script>
+</body>
+
+</html>

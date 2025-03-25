@@ -1,0 +1,693 @@
+/* Styles spécifiques pour la page des spécialistes */
+
+/* Section auth-required */
+.auth-required {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.secondary-button {
+    padding: 0.8rem 1.5rem;
+    background-color: #fff;
+    color: #4a6cad;
+    border: 2px solid #4a6cad;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    background-color: #eef2fa;
+}
+
+/* Filtres de recherche */
+.search-filters {
+    margin-top: 2rem;
+    background-color: #f7f9fc;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 1rem;
+}
+
+#filter-button {
+    align-self: flex-end;
+    margin-top: 1.5rem;
+}
+
+/* Annuaire des spécialistes */
+.specialists-directory {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.directory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.specialist-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.specialist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.specialist-header {
+    display: flex;
+    padding: 1.5rem;
+    background-color: #f5f7fa;
+    border-bottom: 1px solid #eee;
+}
+
+.specialist-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.specialist-info {
+    margin-left: 1.5rem;
+}
+
+.specialist-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    color: #2a2f45;
+}
+
+.specialist-title {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.specialist-rating {
+    display: flex;
+    align-items: center;
+    color: #ffa000;
+}
+
+.specialist-rating span {
+    margin-left: 0.5rem;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.specialist-details {
+    padding: 1.5rem;
+}
+
+.specialist-location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.specialist-location i {
+    margin-right: 0.5rem;
+    color: #4a6cad;
+}
+
+.specialist-expertise h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #444;
+}
+
+.expertise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.expertise-tags span {
+    background-color: #eef2fa;
+    color: #4a6cad;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+}
+
+.specialist-description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.specialist-actions {
+    display: flex;
+    padding: 1rem 1.5rem;
+    background-color: #f5f7fa;
+    border-top: 1px solid #eee;
+    gap: 1rem;
+}
+
+.contact-button, .appointment-button {
+    flex: 1;
+    padding: 0.7rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-button {
+    background-color: #fff;
+    color: #4a6cad;
+    border: 1px solid #4a6cad;
+}
+
+.appointment-button {
+    background-color: #4a6cad;
+    color: #fff;
+    border: 1px solid #4a6cad;
+}
+
+.contact-button:hover {
+    background-color: #eef2fa;
+}
+
+.appointment-button:hover {
+    background-color: #3a5c9d;
+}
+
+.specialist-actions i {
+    margin-right: 0.5rem;
+}
+
+/* Modal de prise de rendez-vous */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 1.8rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+/* Calendrier pour prise de rendez-vous */
+.appointment-scheduler {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.calendar-container, .time-slots {
+    flex: 1;
+    min-width: 300px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #4a6cad;
+    cursor: pointer;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-date {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calendar-date.available {
+    background-color: #eef2fa;
+    color: #4a6cad;
+}
+
+.calendar-date.unavailable {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.calendar-date.selected {
+    background-color: #4a6cad;
+    color: #fff;
+}
+
+.calendar-date:not(.unavailable):hover {
+    background-color: #d1deef;
+}
+
+/* Créneaux horaires */
+.slots-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.time-slot {
+    padding: 0.6rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.time-slot.available:hover {
+    background-color: #eef2fa;
+    border-color: #4a6cad;
+}
+
+.time-slot.selected {
+    background-color: #4a6cad;
+    color: #fff;
+    border-color: #4a6cad;
+}
+
+.time-slot.unavailable {
+    background-color: #f5f5f5;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+/* Formulaire de rendez-vous */
+.appointment-form {
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Modal de confirmation */
+.confirmation-message {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.confirmation-message i {
+    font-size: 4rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.confirmation-message h2 {
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+/* Widget de chat */
+.chat-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 350px;
+    max-width: 90vw;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 900;
+    overflow: hidden;
+    transform: translateY(calc(100% - 60px));
+    transition: transform 0.3s ease;
+}
+
+.chat-widget.open {
+    transform: translateY(0);
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #4a6cad;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.chat-header i {
+    margin-right: 0.5rem;
+}
+
+.minimize-chat {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.chat-body {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 1rem;
+    max-width: 80%;
+}
+
+.message.support {
+    margin-right: auto;
+}
+
+.message.user {
+    margin-left: auto;
+}
+
+.message-content {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.message.support .message-content {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.message.user .message-content {
+    background-color: #4a6cad;
+    color: #fff;
+}
+
+.message-time {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.3rem;
+    text-align: right;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #eee;
+    padding: 0.8rem;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 0.95rem;
+}
+
+.chat-input button {
+    background-color: #4a6cad;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+    background-color: #3a5c9d;
+}
+
+.chat-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #4a6cad;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .specialist-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .specialist-info {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .appointment-scheduler {
+        flex-direction: column;
+    }
+    
+    .calendar-container, .time-slots {
+        width: 100%;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions button {
+        width: 100%;
+    }
+    
+    .specialist-actions {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .filters-container {
+        flex-direction: column;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .slots-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .chat-widget {
+        width: calc(100% - 2rem);
+        right: 1rem;
+        bottom: 1rem;
+    }
+    
+    .chat-body {
+        height: 300px;
+    }
+}
+
+/* Styles pour les éléments d'accessibilité */
+button:focus, a:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid #4a6cad;
+    outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.specialist-card, .modal-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* États de chargement */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4a6cad;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Messages d'alerte */
+.alert {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.alert-error {
+    background-color: #fdecea;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.alert-info {
+    background-color: #e3f2fd;
+    color: #0277bd;
+    border: 1px solid #bbdefb;
+}
