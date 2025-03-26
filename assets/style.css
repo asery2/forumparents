@@ -37,79 +37,6 @@ a {
     padding: 0 20px;
 }
 
-/* Header 
-header {
-    background-color: white;
-    box-shadow: var(--shadow);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    height: 48px; /* Hauteur fixe 
-}
-
-.main-nav {
-    height: 48px;
-    display: flex;
-    align-items: center;
-}
-
-.main-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 32px;
-    margin-right: 8px;
-}
-
-.logo a {
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--primary-color);
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar {
-    position: relative;
-    margin-right: 16px;
-}
-
-.search-bar input {
-    background-color: var(--light-gray);
-    border: 1px solid #EDEFF1;
-    border-radius: var(--border-radius);
-    height: 36px;
-    width: 240px;
-    padding: 0 16px;
-    font-size: 14px;
-}
-
-.search-bar button {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: #878A8C;
-    cursor: pointer;
-}*/
-
-/* HEADER */
 header {
     background-color: var(--primary-color);
     color: white;
@@ -804,6 +731,253 @@ nav ul li a:hover {
     .mobile-nav ul li a:hover {
         background-color: rgba(0, 0, 0, 0.05);
     }
+}
+/*.post-form {
+    display: none; /* Masquer le formulaire par défaut
+    transition: max-height 0.3s ease;
+}*/
+
+.post-form.expanded {
+    display: block; /* Afficher le formulaire lorsqu'il est activé */
+}
+.floating-post-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.floating-post-button:hover {
+    transform: scale(1.1);
+}
+
+/*.post-form {
+    /* Enhanced Post Form Styling */
+.post-form {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.post-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.post-form input, 
+.post-form textarea, 
+.post-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #EDEFF1;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.post-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.post-form input:focus, 
+.post-form textarea:focus, 
+.post-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 80, 158, 0.1);
+}
+
+.post-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.post-form-submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.post-form-submit:hover {
+    background-color: #003f7b;
+}
+
+.post-form-cancel {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid #EDEFF1;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.post-form-cancel:hover {
+    background-color: var(--light-gray);
+}
+
+/* Enhance Forum Navigation */
+.forum-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 10px 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+}
+
+.forum-sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sort-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.sort-option:hover {
+    background-color: var(--light-gray);
+}
+
+.sort-option.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Group Filter */
+.group-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#groupFilter {
+    padding: 8px 12px;
+    border: 1px solid #EDEFF1;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+#groupFilter:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Comments Section */
+.comments-section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 16px;
+    margin-top: 16px;
+    box-shadow: var(--shadow);
+}
+
+.comment {
+    border-bottom: 1px solid #EDEFF1;
+    padding: 12px 0;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.comment-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #EDEFF1;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+}
+
+.comment-form button {
+    padding: 10px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.comment-form button:hover {
+    background-color: #003f7b;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #EDEFF1;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 14px;
+}
+
+.search-bar button {
+    padding: 10px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-bar button:hover {
+    background-color: #003f7b;
 }
 }
 }

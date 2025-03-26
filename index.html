@@ -13,7 +13,7 @@
 
 <header>
     <div class="header-container">
-        <img src="../assets/logo.png" alt="Logo du forum" class="logo">
+        <img src="/assets/logo.png" alt="Logo du forum" class="logo">
         <button class="mobile-menu-toggle">☰</button>
     <nav>
         <ul>
@@ -158,14 +158,33 @@
                         <i class="fas fa-chart-line"></i> En hausse
                     </div>
                 </div>
+                <select id="groupFilter">
+                    <option value="all">Tous les groupes</option>
+                    <option value="parentalité">r/Parentalité</option>
+                    <option value="éducation">r/Éducation</option>
+                    <option value="santé">r/SantéEnfant</option>
+                    <option value="activités">r/Activités</option>
+                </select>
             </div>
-
-            <!-- Formulaire de création de post -->
-            <div class="post-form">
-                <div class="user-avatar">
-                    <i class="fas fa-user"></i>
-                </div>
-                <input type="text" class="post-input" placeholder="Créer un post">
+            <div class="create-post-icon">
+                <i class="fas fa-plus-circle" aria-label="Créer un nouveau post"></i>
+            </div>
+            <div class="create-post-icon" id="togglePostForm">
+                <i class="fas fa-plus-circle"></i> Créer un post
+            </div>
+            
+            <div class="post-form" id="postFormContainer">
+                <form id="createPostForm">
+                    <!-- Champs du formulaire ici (titre, contenu, type...) -->
+                    <input id="postTitle" placeholder="Titre du post">
+                    <textarea id="postContent" placeholder="Contenu..."></textarea>
+                    <select id="postType">
+                        <option value="discussion">Discussion</option>
+                        <option value="question">Question</option>
+                        <option value="conseil">Conseil</option>
+                    </select>
+                    <button type="submit">Publier</button>
+                </form>
             </div>
 
             <!-- Container des posts -->
@@ -433,12 +452,11 @@
             </div>
         </div>
     </div>
-    
-    <script src="../js/forum.js"></script>
     <script src="../js/main.js"></script>
-    <!-- Ajout du SDK Firebase dans ton fichier HTML -->
+    <!-- Ajout du SDK Firebase dans ton fichier HTML>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script-->
+    <script type="module" src="js/forump.js"></script>
 
 </body>
 </html>

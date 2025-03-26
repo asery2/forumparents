@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Post</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Post Détails</h1>
+</header>
+
+<main id="post-details">
+    <h2 id="post-title"></h2>
+    <div id="post-author"></div>
+    <div id="post-content"></div>
+    <div id="post-comments"></div>
+    
+    <!-- Formulaire pour ajouter un commentaire -->
+    <form id="comment-form">
+        <input type="text" id="comment-input" placeholder="Votre commentaire...">
+        <button type="submit">Commenter</button>
+    </form>
+</main>
+
+<script src="../js/forump.js"></script>
+<script>
+// Configuration Firebase
+const firebaseConfig = {
+    // ... votre configuration ici
+};
+firebase.initializeApp(firebaseConfig);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+
+    loadPost(postId);
+});
+
+function loadPost(postId) {
+    const postRef = firebase.database().ref('posts/' + postId);
+    postRef.once('value').then((snapshot) => {
+        const post = snapshot.val();
+        document.getElementById('post-title').innerText = post.titre;
+        document.getElementById('post-author').innerText = 'Posté par u/' + post.auteur;
+        document.getElementById('post-content').innerText = post.contenu;
+
+        // Chargez également les commentaires ici, si vous avez une collection de commentaires
+    });
+}
+
+// Ajouter des fonctionnalités pour les commentaires ici
+</script>
+
+</body>
+</html>
