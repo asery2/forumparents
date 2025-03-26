@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion - Forum des Parents</title>
-    <link rel="stylesheet" href="../assets/login.css"> <!-- Lien vers le fichier CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - Forum des Parents</title>
+  <link rel="stylesheet" href="../assets/login.css">
 </head>
 <body>
+  <div class="login-container">
+    <h1>Connexion</h1>
+    <form id="login-form">
+      <label for="email">Adresse e-mail :</label>
+      <input type="email" id="email" placeholder="Entrez votre email" required>
 
-    <div class="login-container">
-        <h1>Connexion</h1>
-        <form id="login-form">
-            <label for="username">Nom d'utilisateur :</label>
-            <input type="text" id="username" placeholder="Entrez votre nom d'utilisateur" required>
+      <label for="password">Mot de passe :</label>
+      <input type="password" id="password" placeholder="Mot de passe" required>
 
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" placeholder="Entrez votre mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+    <p class="footer-text">
+      Pas encore inscrit ? <a href="register.html">Créer un compte</a>
+    </p>
+  </div>
 
-            <button type="submit">Se connecter</button>
-        </form>
-        <p class="footer-text">
-            Pas encore inscrit ? <a href="register.html">Créer un compte</a>
-        </p>
-    </div>
-
-    <script>
-        // Gestionnaire d'événements pour la soumission du formulaire
-        document.getElementById("login-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            // Ajoutez une logique de connexion ici si nécessaire
-            alert("Connexion réussie !");
-        });
-    </script>
+  <script type="module" src="../js/login.js"></script>
 </body>
 </html>

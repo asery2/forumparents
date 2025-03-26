@@ -24,6 +24,7 @@
             <li><a href="./pages/events.html">Événements</a></li> 
             <li><a href="./pages/contact.html">Contact</a></li>
             <li><a href="./pages/login.html" class="cta-button">Se connecter</a></li>
+           
         </u>
     </nav>
 </header>
@@ -157,18 +158,17 @@
                     <div class="sort-option">
                         <i class="fas fa-chart-line"></i> En hausse
                     </div>
+                    <select id="groupFilter">
+                        <option value="all">Tous les groupes</option>
+                        <option value="parentalité">r/Parentalité</option>
+                        <option value="éducation">r/Éducation</option>
+                        <option value="santé">r/SantéEnfant</option>
+                        <option value="activités">r/Activités</option>
+                    </select>
                 </div>
-                <select id="groupFilter">
-                    <option value="all">Tous les groupes</option>
-                    <option value="parentalité">r/Parentalité</option>
-                    <option value="éducation">r/Éducation</option>
-                    <option value="santé">r/SantéEnfant</option>
-                    <option value="activités">r/Activités</option>
-                </select>
+               
             </div>
-            <div class="create-post-icon">
-                <i class="fas fa-plus-circle" aria-label="Créer un nouveau post"></i>
-            </div>
+        
             <div class="create-post-icon" id="togglePostForm">
                 <i class="fas fa-plus-circle"></i> Créer un post
             </div>
@@ -452,6 +452,7 @@
             </div>
         </div>
     </div>
+    
     <script src="../js/main.js"></script>
     <!-- Ajout du SDK Firebase dans ton fichier HTML>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
